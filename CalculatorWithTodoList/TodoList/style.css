@@ -1,0 +1,111 @@
+:root {
+  --indent-x: 1.5rem;
+  --indent-y: 1rem;
+
+  --indent-x_half: 0.75rem;
+  --indent-y_half: 0.5rem;
+
+  --indent-base: var(--indent-y) var(--indent-x);
+  --indent-base_half: var(--indent-y_half) var(--indent-x_half);
+
+  --color-bg: #cccccc20;
+  --color-border: #ccc;
+
+  --shadow: 0 0 10px #ccc;
+
+  --radius: 10px;
+
+  font-family: monospace;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.app__headline {
+  padding: var(--indent-base);
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px dashed var(--color-border);
+}
+
+.main {
+  padding: var(--indent-base);
+  display: flex;
+}
+
+.todo-list {
+  margin: auto;
+  padding: var(--indent-base);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form>* {
+  margin-right: var(--indent-x_half);
+}
+
+.form>*:last-child {
+  margin-right: 0;
+}
+
+.form input {
+  width: 100%;
+}
+
+.form button[type="submit"],
+.form input {
+  padding: var(--indent-base_half);
+}
+
+.todos {
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+.todos>*:first-child {
+  margin-top: var(--indent-y_half);
+}
+
+.todos>* {
+  margin-bottom: var(--indent-y_half);
+  padding: var(--indent-base_half);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.todos>*:last-child {
+  margin-bottom: 0;
+}
+
+.todo {
+  transition: all 0.3s;
+}
+
+.todo:hover {
+  transform: translate(-10%);
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
